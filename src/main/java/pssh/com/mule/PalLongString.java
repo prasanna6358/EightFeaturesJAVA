@@ -39,4 +39,29 @@ public class PalLongString {
         }
         return null;
     }
+    
+    public static void sortNumbers(){
+        int n,temp;
+        System.out.println("Enter the no of elements to sort");
+        Scanner scanner = new Scanner(System.in);
+        n=scanner.nextInt();
+        int a[] = new int[5];
+        System.out.println("Enter all the elements");
+        for (int i=0;i<n;i++){
+            a[i] = scanner.nextInt();
+        }
+        for (int i=0;i<n;i++){
+            for(int j=i+1;j<n;j++){
+                if(a[i]>a[j]){
+                    temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+
+        for (int k=0;k<n;k++){
+            System.out.println(a[k]);
+        }
+    }
 }
