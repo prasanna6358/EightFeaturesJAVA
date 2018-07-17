@@ -1,3 +1,10 @@
+import java.util.function.BiConsumer;
+import java.util.function.BiFunction;
+import java.util.function.BiPredicate;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+
 public class JavaEight 
 {
     public static void main( String[] args ) {
@@ -32,11 +39,17 @@ public class JavaEight
         consumer2.accept("Prasanna");
 
         BiPredicate<String,String> biPredicate = App::getPredicate;
+   
+        Predicate<Integer> predicate = App::getPredicate;
 
         System.out.println();
         System.out.println("it will prnt true or false");
         System.out.println();
         System.out.println(biPredicate.test("prasanna","prasanna"));
+         if(predicate.test(22)){
+            System.out.println("eligible for voting ");
+        }
+        else System.out.println("not eligible");
     }
 
 
@@ -62,7 +75,9 @@ public class JavaEight
     public static boolean getPredicate(String m1, String m2){
         return m1.equalsIgnoreCase(m2);
     }
-
+   public static boolean getPredicate(int number){
+        return number>18;
+    }
 
 
 }
